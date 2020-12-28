@@ -69,7 +69,7 @@ warnMesg.textContent = "Please check atleast one box.";
 warnMesg.setAttribute("style", "color: red;");
 
 passLenInput.setAttribute("type", "text");
-passLenInput.classList.add("hide", "txt");
+passLenInput.classList.add("hide", "txt", "outline-none");
 
 passLenLabel.textContent = "Please select password length min 8, max 128.";
 passLenLabel.classList.add("hide");
@@ -112,19 +112,21 @@ applyDiv.classList.add("card-div");
 
 buttonApply.setAttribute("onclick", "apply(); return false;");
 buttonApply.textContent = "Apply Selection";
-buttonApply.classList.add("btn");
+buttonApply.classList.add("btn", "outline-none");
 
 applyLengthDiv.classList.add("card-div", "hide");
 
 buttonApplyLength.setAttribute("onclick", "applyLength(); return false;");
 buttonApplyLength.textContent = "Apply Length";
-buttonApplyLength.classList.add("btn", "hide");
+buttonApplyLength.classList.add("btn", "hide", "outline-none");
 
 genNxtPwdDiv.classList.add("card-div", "hide");
 
+buttonGenerate.classList.add("outline-none");
+
 buttonGenNxtPwd.setAttribute("onclick", "generateNextPassword();");
 buttonGenNxtPwd.textContent = "Refresh & Restart";
-buttonGenNxtPwd.classList.add("btn", "hide");
+buttonGenNxtPwd.classList.add("btn", "hide", "outline-none");
 
 // Write password to the #password input
 function writePassword() {
@@ -135,8 +137,7 @@ function writePassword() {
     buttonGenerate.classList.add("hide");
     genNxtPwdDiv.classList.remove("hide");
     buttonGenNxtPwd.classList.remove("hide");
-  }
-  else
+  } else
     passwordText.value = "Your Secure Password";
 }
 
@@ -169,7 +170,7 @@ function generatePassword() {
   passLenInput.after(breakLine5);
   breakLine5.after(applyLengthDiv);
   applyLengthDiv.appendChild(buttonApplyLength);
-  
+
   buttonGenerate.after(breakLine6);
   breakLine6.after(buttonGenNxtPwd);
 
@@ -251,7 +252,7 @@ function applyLength() {
   } else {
     if (count === 0) {
       lForm.lastElementChild.before(invalidLength);
-      passLenInput.focus(); 
+      passLenInput.focus();
       count++;
     }
   }

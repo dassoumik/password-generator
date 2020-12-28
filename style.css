@@ -81,8 +81,7 @@ header {
   border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
   color: hsl(0, 0%, 100%);
   display: inline-block;
   font-size: 22px;
@@ -93,19 +92,12 @@ header {
   cursor: pointer;
 }
 
-.btn-margin {
-  margin-left: 35%;
-  margin-top: 10; 
-  margin-bottom: 10;
-}
-
 .txt {
   border: none;
   width: 25%;
   background-color: rgb(231, 222, 222);
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
   color: hsl(0, 3%, 12%);
   display: inline;
   font-size: 22px;
@@ -113,6 +105,9 @@ header {
   margin: 16px 16px 16px 20px;
   padding: 2px 4px;
   text-align: center;
+}
+
+.outline-none {
   outline: none;
 }
 
@@ -160,10 +155,6 @@ button[disabled] {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
-  } 
-
-  .btn-margin {
-    margin-left: 25%;
   }
 
   .txt {
@@ -176,11 +167,9 @@ button[disabled] {
 }
 
 @media (max-width: 500px) {
-  .btn, .txt {
-    font-size: 0.8rem;
-  }
 
-  .btn-margin {
-    margin-left: 30%;
+  .btn,
+  .txt {
+    font-size: 0.8rem;
   }
 }
