@@ -142,7 +142,7 @@ function writePassword() {
 }
 
 function generatePassword() {
-
+  // add the forms for complexity and length selection
   h2Select.after(qForm);
   qForm.after(lForm);
 
@@ -163,6 +163,8 @@ function generatePassword() {
   cBox4.after(lBox4);
   lBox4.after(breakLine4);
 
+  // Below are length selection forms and refresh buttons 
+  // initially set as hidden elements on definition.
   breakLine4.after(applyDiv);
   applyDiv.appendChild(buttonApply);
   lForm.appendChild(passLenLabel);
@@ -180,6 +182,8 @@ function generatePassword() {
 }
 
 function apply() {
+  // This is function is run when "Apply Selection" button is clicked.
+  // It does the validation and sets flags for selection criteria.
   if (qForm.lc.checked == false && qForm.uc.checked == false &&
     qForm.num.checked == false && qForm.sc.checked == false) {
 
@@ -190,20 +194,16 @@ function apply() {
     noWarn = true;
     if (qForm.lc.checked) {
       selList.push("lc");
-      console.log(selList);
     }
     if (qForm.uc.checked) {
       selList.push("uc");
-      console.log(selList);
 
     }
     if (qForm.num.checked) {
       selList.push("num");
-      console.log(selList);
     }
     if (qForm.sc.checked) {
       selList.push("sc");
-      console.log(selList);
     }
 
     selListLen = selList.length;
@@ -218,6 +218,8 @@ function apply() {
 }
 
 function applyLength() {
+  // This function runs on clicking "Apply Length" button. It validates the length
+  // and creates the password based on chosen complexity and length.
   passLength = parseInt(passLenInput.value);
   if (passLength > 7 && passLength < 129) {
     validPassLength = true;
@@ -229,13 +231,13 @@ function applyLength() {
       selListElement = selList[x];
       switch (selListElement) {
         case ("lc" || "uc"):
-          multiplier = 27;
+          multiplier = 26;
         case ("num"):
-          multiplier = 11;
+          multiplier = 10;
         case ("sc"):
-          multiplier = 13;
+          multiplier = 12;
         default:
-          multiplier = 11;
+          multiplier = 10;
       }
 
       randomNumber = Math.floor(Math.random() * multiplier);
@@ -259,6 +261,7 @@ function applyLength() {
 }
 
 function generateNextPassword() {
+  // Reloads the home page on clicking the "Refresh" button.
   location.reload();
 }
 
